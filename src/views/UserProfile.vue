@@ -27,6 +27,7 @@
                   <v-text-field
                     disabled
                     label="Company (disabled)"
+                    
                   />
                 </v-col>
 
@@ -37,6 +38,7 @@
                   <v-text-field
                     color="purple"
                     label="User Name"
+                    filled
                   />
                 </v-col>
 
@@ -47,6 +49,7 @@
                   <v-text-field
                     color="purple"
                     label="Email Address"
+                    filled
                   />
                 </v-col>
 
@@ -57,6 +60,7 @@
                   <v-text-field
                     color="purple"
                     label="First Name"
+                    filled
                   />
                 </v-col>
 
@@ -67,6 +71,7 @@
                   <v-text-field
                     color="purple"
                     label="Last Name"
+                    filled
                   />
                 </v-col>
 
@@ -74,6 +79,7 @@
                   <v-text-field
                     color="purple"
                     label="Adress"
+                    filled
                   />
                 </v-col>
 
@@ -84,6 +90,7 @@
                   <v-text-field
                     color="purple"
                     label="City"
+                    filled
                   />
                 </v-col>
 
@@ -94,6 +101,7 @@
                   <v-text-field
                     color="purple"
                     label="Country"
+                    filled
                   />
                 </v-col>
 
@@ -105,6 +113,7 @@
                     color="purple"
                     label="Postal Code"
                     type="number"
+                    filled
                   />
                 </v-col>
 
@@ -113,6 +122,7 @@
                     color="purple"
                     label="About Me"
                     value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    filled
                   />
                 </v-col>
 
