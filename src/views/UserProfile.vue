@@ -260,9 +260,14 @@
             Continue
           </v-btn>
   
-          <v-btn text>
-            Cancel
+          <v-btn
+            @click="e1 = 1">
+            Atras
           </v-btn>
+
+          <!-- <v-btn text>
+            Cancel
+          </v-btn> -->
         </v-stepper-content>
   
         <v-stepper-content step="3">
@@ -279,20 +284,13 @@
             Continue
           </v-btn>
   
-          <v-btn text>
-            Cancel
+          <v-btn
+            @click="e1 = 2">
+            Atras
           </v-btn>
         </v-stepper-content>
       </v-stepper-items>
     </v-stepper>
-
-
-
-
-
-
-
-
                 </v-col>
               </v-row>
             </v-container>
