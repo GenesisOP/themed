@@ -11,25 +11,50 @@
       >
         <material-card
           color="primary"
-          icon="mdi-account-outline"
+          icon="mdi-file-document"
         >
           <template #title>
-            Edit Profile — <small class="text-body-1">Complete your profile</small>
+            Cuestionario — <small class="text-body-1">Completa con tus datos</small>
           </template>
 
           <v-form>
             <v-container class="py-0">
               <v-row>
-                <!-- <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    disabled
-                    label="Company (disabled)"
-                  />
-                </v-col> -->
 
+                <v-col
+                  cols="12"
+                  class="text-center"
+                >
+                 
+                  <v-stepper v-model="e1">
+      <v-stepper-header>
+        <v-stepper-step
+          :complete="e1 > 1"
+          step="1"
+        >
+          Datos Generales
+        </v-stepper-step>
+  
+        <v-divider></v-divider>
+  
+        <v-stepper-step
+          :complete="e1 > 2"
+          step="2"
+        >
+          Name of step 2
+        </v-stepper-step>
+  
+        <v-divider></v-divider>
+  
+        <v-stepper-step step="3">
+          Name of step 3
+        </v-stepper-step>
+      </v-stepper-header>
+  
+      <v-stepper-items>
+        <v-stepper-content step="1">
+          
+          <v-row>
                 <v-col
                   cols="4"
                   md="2"
@@ -40,7 +65,6 @@
                     filled
                   />
                 </v-col>
-
                 <v-col
                   cols="12"
                   md="4"
@@ -62,7 +86,6 @@
                     filled
                   />
                 </v-col>
-
                 <v-col
                   cols="12"
                   md="3"
@@ -115,63 +138,161 @@
                     filled
                   />
                 </v-col>
-
-                <!-- <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Fecha de nacimiento"
-                    filled
-                  />
-                </v-col> -->
-
-                
-
-<!-- ----------------------------------- -->
                 <v-col
                   cols="12"
                   md="4"
                 >
                   <v-text-field
                     color="purple"
-                    label="Country"
-                    filled
-                  />
-                </v-col>
-
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Postal Code"
+                    label="Estado"
                     type="number"
                     filled
                   />
                 </v-col>
 
-                <v-col cols="12">
-                  <v-textarea
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
                     color="purple"
-                    label="About Me"
-                    value="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                    label="Municipio"
+                    type="number"
                     filled
                   />
                 </v-col>
 
                 <v-col
                   cols="12"
-                  class="text-right"
+                  md="4"
                 >
-                  <v-btn
-                    color="primary"
-                    min-width="150"
+                  <v-text-field
+                    color="purple"
+                    label="Ciudad"
+                    type="number"
+                    filled
+                  />
+                </v-col>
+
+                <v-col
+                  cols="12"
+                  md="6"
+                >
+                      <v-menu
+                        ref="menu"
+                        v-model="menu"
+                        :close-on-content-click="false"
+                        transition="scale-transition"
+                        offset-y
+                        min-width="auto"
+                      >
+                        <template v-slot:activator="{ on, attrs }">
+                          <v-text-field
+                            v-model="date"
+                            label="Fecha de nacimiento"
+                            prepend-icon="mdi-calendar"
+                            readonly
+                            filled
+                            v-bind="attrs"
+                            v-on="on"
+                          ></v-text-field>
+                        </template>
+                        <v-date-picker
+                          v-model="date"
+                          :active-picker.sync="activePicker"
+                          :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
+                          min="1950-01-01"
+                          @change="save"
+                        ></v-date-picker>
+                      </v-menu>
+              </v-col>
+                <v-col
+                  cols="12"
+                  md="6"
+                >
+                <p class="text-left">{{ radios || 'Genero' }}</p>
+                
+                <v-radio-group
+                    v-model="row"
+                    row
                   >
-                    Update Profile
-                  </v-btn>
+                    <v-radio
+                      label="Masculino"
+                      value="radio-1"
+                    ></v-radio>
+                    <v-radio
+                      label="Femenino"
+                      value="radio-2"
+                    ></v-radio>
+                    <v-radio
+                      label="Otros"
+                      value="radio-3"
+                    ></v-radio>
+                  </v-radio-group>
+                </v-col>
+
+          </v-row>
+       
+  
+          <v-btn
+            color="primary"
+            @click="e1 = 2"
+          >
+            Continue
+          </v-btn>
+  
+          <v-btn text>
+            Cancel
+          </v-btn>
+        </v-stepper-content>
+  
+        <v-stepper-content step="2">
+          <v-card
+            class="mb-12"
+            color="grey lighten-1"
+            height="200px"
+          ></v-card>
+  
+          <v-btn
+            color="primary"
+            @click="e1 = 3"
+          >
+            Continue
+          </v-btn>
+  
+          <v-btn text>
+            Cancel
+          </v-btn>
+        </v-stepper-content>
+  
+        <v-stepper-content step="3">
+          <v-card
+            class="mb-12"
+            color="grey lighten-1"
+            height="200px"
+          ></v-card>
+  
+          <v-btn
+            color="primary"
+            @click="e1 = 1"
+          >
+            Continue
+          </v-btn>
+  
+          <v-btn text>
+            Cancel
+          </v-btn>
+        </v-stepper-content>
+      </v-stepper-items>
+    </v-stepper>
+
+
+
+
+
+
+
+
                 </v-col>
               </v-row>
             </v-container>
@@ -181,7 +302,7 @@
 
       <v-col
         cols="12"
-        md="4"
+        md="2"
       >
         <app-card class="mt-4 text-center">
           <v-img
@@ -200,7 +321,7 @@
             </h4>
 
             <p class="text--secondary">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione dolorem deserunt veniam tempora magnam quisquam quam error iusto cupiditate ducimus, et eligendi saepe voluptatibus assumenda similique temporibus placeat animi dicta?
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione dolorem deserunt veniam tempora magnam quisquam quam error iusto cupiditate ducimus
             </p>
 
             <v-btn
@@ -209,7 +330,7 @@
               min-width="100"
               rounded
             >
-              Follow
+              Folssslow
             </v-btn>
           </v-card-text>
         </app-card>
@@ -219,5 +340,11 @@
 </template>
 
 <script>
-  export default { name: 'UserProfileView' }
+   export default {
+    data () {
+      return {
+        e1: 1,
+      }
+    },
+  }
 </script>
