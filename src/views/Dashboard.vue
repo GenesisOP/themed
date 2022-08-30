@@ -69,19 +69,17 @@
 
       <v-col
         cols="12"
-        md="6"
+        md="12"
       >
         <material-card
-          color="orange"
+          color="#eb8d69
+"
           full-header
         >
           <template #heading>
             <div class="pa-8 white--text">
-              <div class="text-h4 font-weight-light">
-                Employees Stats
-              </div>
-              <div class="text-caption">
-                New employees on 15th September, 2016
+              <div class="text-h3 font-weight-light">
+                Cuestionario Clientes
               </div>
             </div>
           </template>
@@ -91,98 +89,6 @@
               :items="items"
             />
           </v-card-text>
-        </material-card>
-      </v-col>
-
-      <v-col
-        cols="12"
-        md="6"
-      >
-        <material-card
-          color="accent"
-          full-header
-        >
-          <template #heading>
-            <v-tabs
-              v-model="tabs"
-              background-color="transparent"
-              slider-color="white"
-              class="pa-8"
-            >
-              <span
-                class="subheading font-weight-light mx-3"
-                style="align-self: center"
-              >Tasks:</span>
-              <v-tab class="mr-3">
-                <v-icon class="mr-2">
-                  mdi-bug
-                </v-icon>
-                Bugs
-              </v-tab>
-              <v-tab class="mr-3">
-                <v-icon class="mr-2">
-                  mdi-code-tags
-                </v-icon>
-                Website
-              </v-tab>
-              <v-tab>
-                <v-icon class="mr-2">
-                  mdi-cloud
-                </v-icon>
-                Server
-              </v-tab>
-            </v-tabs>
-          </template>
-          <v-tabs-items
-            v-model="tabs"
-            background-color="transparent"
-          >
-            <v-tab-item
-              v-for="n in 3"
-              :key="n"
-            >
-              <v-card-text>
-                <template v-for="(task, i) in tasks[tabs]">
-                  <v-row
-                    :key="i"
-                    align="center"
-                    class="flex-nowrap"
-                  >
-                    <v-col cols="1">
-                      <v-list-item-action>
-                        <v-simple-checkbox
-                          v-model="task.value"
-                          color="secondary"
-                        />
-                      </v-list-item-action>
-                    </v-col>
-
-                    <v-col
-                      class="font-weight-light"
-                      cols="8"
-                      v-text="task.text"
-                    />
-
-                    <v-col
-                      cols="auto"
-                      class="text-right"
-                    >
-                      <v-icon class="mx-1">
-                        mdi-pencil
-                      </v-icon>
-
-                      <v-icon
-                        class="mx-1"
-                        color="error"
-                      >
-                        mdi-close
-                      </v-icon>
-                    </v-col>
-                  </v-row>
-                </template>
-              </v-card-text>
-            </v-tab-item>
-          </v-tabs-items>
         </material-card>
       </v-col>
     </v-row>
@@ -210,73 +116,101 @@
         },
         {
           sortable: false,
-          text: 'Name',
+          text: 'Fecha',
+          value: 'date',
+          align: 'center',
+        },
+        {
+          sortable: false,
+          text: 'Nombre',
           value: 'name',
+          align: 'center',
         },
         {
           sortable: false,
-          text: 'Salary',
-          value: 'salary',
-          align: 'right',
+          text: 'Especialidad',
+          value: 'specialty',
+          align: 'center',
         },
         {
           sortable: false,
-          text: 'Country',
+          text: 'Estado',
           value: 'country',
-          align: 'right',
+          align: 'center',
         },
         {
           sortable: false,
-          text: 'City',
-          value: 'city',
-          align: 'right',
+          text: 'Editar',
+          value: 'edit',
+          align: 'center',
+        },
+        {
+          sortable: false,
+          text: 'Crear cliente',
+          value: 'create',
+          align: 'center',
         },
       ],
       items: [
         {
           id: 1,
-          name: 'Dakota Rice',
-          country: 'Niger',
-          city: 'Oud-Tunrhout',
-          salary: '$35,738',
+          date: '29/08/22',
+          name: 'Victor Amado Padron Palomera',
+          specialty: 'Alergología e inmunología',
+          country: 'Tuxtla Gutierrez, Chiapas',
+          edit: 'Editar',
+          create: 'Crear cliente',
         },
         {
           id: 2,
-          name: 'Minerva Hooper',
-          country: 'Curaçao',
-          city: 'Sinaai-Waas',
-          salary: '$23,738',
+          date: '26/08/22',
+          name: 'Armando Fernández Fonseca',
+          specialty: 'Medicina estética',
+          country: 'Tuxtla Gutierrez, Chiapas',
+          edit: 'Editar',
+          create: 'Crear cliente',
         },
         {
           id: 3,
-          name: 'Sage Rodriguez',
-          country: 'Netherlands',
-          city: 'Overland Park',
-          salary: '$56,142',
+          date: '22/08/22',
+          name: 'José Ricardo López Bezares',
+          specialty: 'Urología',
+          country: 'Tuxtla Gutiérrez, Chiapas',
+          edit: 'Editar',
+          create: 'Crear cliente',
         },
         {
           id: 4,
-          name: 'Philip Chanley',
-          country: 'Korea, South',
-          city: 'Gloucester',
-          salary: '$38,735',
+          date: '11/02/22',
+          name: 'Dakota Rice',
+          specialty: 'Cardiologo',
+          country: 'Nigeria',
+          edit: 'Editar',
+          create: 'Crear cliente',
         },
         {
           id: 5,
-          name: 'Doris Greene',
-          country: 'Malawi',
-          city: 'Feldkirchen in Kārnten',
-          salary: '$63,542',
+          date: '22/08/22',
+          name: 'Alan Burgos Páez',
+          specialty: 'Otorrinolaringologia',
+          country: 'Mazatlán, Sinaloa',
+          edit: 'Editar',
+          create: 'Crear cliente',
+        },
+        {
+          id: 6,
+          date: '22/08/22',
+          name: 'Paola Carolina García Parra Pérez',
+          specialty: 'Algología',
+          country: 'Tuxtla Gutiérrez, Chiapas',
+          edit: 'Editar',
+          create: 'Crear cliente',
         },
       ],
-      stats: [
-       /*  {
-          actionIcon: 'mdi-alert',
-          actionText: 'Get More Space...',
+      /*  stats: [
+       {
           color: '#FD9A13',
           icon: 'mdi-sofa-single',
-          title: 'Bookings',
-          value: '184',
         },
         {
           actionIcon: 'mdi-tag',
@@ -301,53 +235,8 @@
           icon: 'mdi-twitter',
           title: 'Followers',
           value: '+245',
-        }, */
-      ],
-      tabs: 0,
-      tasks: {
-        0: [
-          {
-            text: 'Sign contract for "What are conference organizers afraid of?"',
-            value: true,
-          },
-          {
-            text: 'Lines From Great Russian Literature? Or E-mails From My Boss?',
-            value: false,
-          },
-          {
-            text: 'Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit',
-            value: false,
-          },
-          {
-            text: 'Create 4 Invisible User Experiences you Never Knew About',
-            value: true,
-          },
-        ],
-        1: [
-          {
-            text: 'Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit',
-            value: true,
-          },
-          {
-            text: 'Sign contract for "What are conference organizers afraid of?"',
-            value: false,
-          },
-        ],
-        2: [
-          {
-            text: 'Lines From Great Russian Literature? Or E-mails From My Boss?',
-            value: false,
-          },
-          {
-            text: 'Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit',
-            value: true,
-          },
-          {
-            text: 'Sign contract for "What are conference organizers afraid of?"',
-            value: true,
-          },
-        ],
-      },
+        },
+      ], */
     }),
 
     computed: {

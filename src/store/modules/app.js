@@ -8,11 +8,6 @@ const state = {
   mini: false,
   items: [
     {
-      title: 'Listado',
-      icon: 'mdi-clipboard-outline',
-      to: '/tables/regular/',
-    },
-    {
       title: 'Inicio',
       icon: 'mdi-view-dashboard',
       to: '/',

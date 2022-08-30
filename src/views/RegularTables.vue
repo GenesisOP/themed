@@ -5,7 +5,7 @@
     tag="section"
   >
     <view-intro
-      heading="Simple Tables"
+      heading="Cuestionario de clientes"
       link="components/simple-tables"
     />
 

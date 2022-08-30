@@ -20,24 +20,23 @@
           <v-form>
             <v-container class="py-0">
               <v-row>
-                <v-col
+                <!-- <v-col
                   cols="12"
                   md="4"
                 >
                   <v-text-field
                     disabled
                     label="Company (disabled)"
-                    
                   />
-                </v-col>
+                </v-col> -->
 
                 <v-col
-                  cols="12"
-                  md="4"
+                  cols="4"
+                  md="2"
                 >
                   <v-text-field
                     color="purple"
-                    label="User Name"
+                    label="Titulo"
                     filled
                   />
                 </v-col>
@@ -48,7 +47,29 @@
                 >
                   <v-text-field
                     color="purple"
-                    label="Email Address"
+                    label="Nombre(s)"
+                    filled
+                  />
+                </v-col>
+
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Apellido Paterno"
+                    filled
+                  />
+                </v-col>
+
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Apellido Materno"
                     filled
                   />
                 </v-col>
@@ -59,7 +80,7 @@
                 >
                   <v-text-field
                     color="purple"
-                    label="First Name"
+                    label="Especialidad(es)"
                     filled
                   />
                 </v-col>
@@ -70,15 +91,7 @@
                 >
                   <v-text-field
                     color="purple"
-                    label="Last Name"
-                    filled
-                  />
-                </v-col>
-
-                <v-col cols="12">
-                  <v-text-field
-                    color="purple"
-                    label="Adress"
+                    label="Otra (subespecialidad o diplomado)"
                     filled
                   />
                 </v-col>
@@ -89,11 +102,34 @@
                 >
                   <v-text-field
                     color="purple"
-                    label="City"
+                    label="Telefono"
                     filled
                   />
                 </v-col>
 
+                <v-col cols="12"
+                  md="8">
+                  <v-text-field
+                    color="purple"
+                    label="Correo electrónico"
+                    filled
+                  />
+                </v-col>
+
+                <!-- <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Fecha de nacimiento"
+                    filled
+                  />
+                </v-col> -->
+
+                
+
+<!-- ----------------------------------- -->
                 <v-col
                   cols="12"
                   md="4"
