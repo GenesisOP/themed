@@ -247,12 +247,178 @@
         </v-stepper-content>
   
         <v-stepper-content step="2">
-          <v-card
-            class="mb-12"
-            color="grey lighten-1"
-            height="200px"
-          ></v-card>
-  
+
+          <!--   -------------------------Persona fisica y moral------------------ -->
+        
+          <v-tabs
+            v-model="tabs"
+            centered
+          >
+            <v-tab>Persona fisica</v-tab>
+            <v-tab>Persona moral</v-tab>
+          </v-tabs>
+      <v-tabs-items v-model="tabs">
+        <v-tab-item>
+          <v-row>
+            <br></br>
+              <v-col
+                  cols="12"
+                  md="6"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Nombre(s)"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Apellido paterno"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Nombre materno"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="RFC Persona Física"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="CURP"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Correo electrónico fiscal"
+                    filled
+                  />
+                </v-col>
+               <!--  <v-col
+                  cols="12"
+                  md="6"
+                >
+                <p class="text-left">{{ radios || '¿Cuenta con Constancia de Situación Fiscal actualizada?' }}</p>
+                
+                <v-radio-group
+                    v-model="row"
+                    row
+                  >
+                    <v-radio
+                      label="Si"
+                    
+                      @click="expand = !expand"
+             
+    
+                      
+                    ></v-radio>
+
+                    <v-radio
+                      label="No"
+                      @click="isdeleted"
+                    ></v-radio>
+
+                    <v-radio
+                      label="En trámite"
+              
+                    ></v-radio>
+                  </v-radio-group>
+                </v-col>
+
+                <v-col 
+                 
+                  cols="12"
+                  md="6"
+                >
+
+                <v-file-input 
+                v-show="expand"
+                    label="Subir Constancia de Situación Fiscal actualizada (PDF)"
+                    outlined
+                    dense
+                  ></v-file-input>
+                </v-col> -->
+                
+              
+                <v-card-text>
+                  <p class="text-CENTER">{{ radios || '¿Cuenta con Constancia de Situación Fiscal actualizada?' }}</p>
+                        <v-row align="center">
+                            <v-checkbox
+                                label="Si"
+                                  v-model="enabled"
+                                  class="shrink mr-2 mt-0"
+                              ></v-checkbox>
+                          <v-file-input
+                              :disabled="!enabled"
+                              label="File input"
+                              outlined
+                              filled  
+                              dense
+                    ></v-file-input>
+                       
+                              <v-col 
+                                cols="12"
+                                md="4"
+                              >
+                                <v-checkbox
+                                    v-model="checkbox"
+                                    label="En trámite"
+                                    class="shrink mr-2 mt-0"
+                                  ></v-checkbox>
+                              </v-col>
+
+                              <v-col 
+                                cols="12"
+                                md="4"
+                              >
+                                  <v-checkbox
+                                    v-model="checkbox"
+                                    label="No"
+                                    class="shrink mr-2 mt-0"
+                                  ></v-checkbox>
+                              </v-col>
+                        </v-row>
+                      
+                </v-card-text>
+                
+              </v-row>
+        </v-tab-item>
+        <v-tab-item>
+          <v-card flat>
+              <p>
+                Maecenas ullamcorper, dui et placerat feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem. Sed hendrerit. Maecenas malesuada. Vestibulum ullamcorper mauris at ligula. Proin faucibus arcu quis ante.
+              </p>
+          </v-card>
+        </v-tab-item>
+      </v-tabs-items>
+      
           <v-btn
             color="primary"
             @click="e1 = 3"
@@ -264,10 +430,6 @@
             @click="e1 = 1">
             Atras
           </v-btn>
-
-          <!-- <v-btn text>
-            Cancel
-          </v-btn> -->
         </v-stepper-content>
   
         <v-stepper-content step="3">
@@ -337,11 +499,20 @@
   </v-container>
 </template>
 
+
 <script>
-   export default {
+  export default {
     data () {
       return {
-        e1: 1,
+        tabs: null,
+        e1: 1, 
+        expand: false,
+        includeFiles: true,
+    enabled: false,
+        vue: {
+          exp: null,
+         
+        }
       }
     },
   }
