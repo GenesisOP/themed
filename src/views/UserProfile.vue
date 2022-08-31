@@ -370,6 +370,7 @@
                 <v-card-text>
                   <p class="text-CENTER">{{ radios || '¿Cuenta con Constancia de Situación Fiscal actualizada?' }}</p>
                         <v-row align="center">
+                          
                             <v-checkbox
                                 label="Si"
                                   v-model="enabled"
