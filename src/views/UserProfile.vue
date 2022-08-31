@@ -406,10 +406,140 @@
                                   ></v-checkbox>
                               </v-col>
                         </v-row>
-                      
+                        
                 </v-card-text>
-                
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Tipo vialidad"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="5"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Nombre vialidad"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Num Ext"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Num Int"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Entre (vialidad)"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="5"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Nombre vialidad"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Y (vialidad)"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="5"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Nombre vialidad"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Colonia (tipo)"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Colonia (nombre)"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Estado"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Municipio"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    label="Ciudad"
+                    filled
+                  />
+                </v-col>
               </v-row>
+              
         </v-tab-item>
         <v-tab-item>
           <v-card flat>
