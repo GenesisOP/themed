@@ -7,7 +7,7 @@
     <v-row justify="center">
       <v-col
         cols="12"
-        md="8"
+        md="10"
       >
         <material-card
           color="primary"
@@ -287,7 +287,7 @@
                 >
                   <v-text-field
                     color="purple"
-                    label="Nombre materno"
+                    label="Apellido materno"
                     filled
                   />
                 </v-col>
@@ -369,27 +369,39 @@
               
                 <v-card-text>
                   <p class="text-CENTER">{{ radios || '¿Cuenta con Constancia de Situación Fiscal actualizada?' }}</p>
-                        <v-row align="center">
-                          
+                        <v-row >
+                          <v-col 
+                          cols="12"
+                          md="1"
+                        >
                             <v-checkbox
                                 label="Si"
                                   v-model="enabled"
                                   class="shrink mr-2 mt-0"
+                                  
                               ></v-checkbox>
+                            </v-col>
+                            <v-col 
+                          cols="12"
+                          md="4"
+                        >
                           <v-file-input
                               :disabled="!enabled"
-                              label="File input"
+                              label="Subir documento PDF"
                               outlined
                               filled  
                               dense
+                              
                     ></v-file-input>
+                            </v-col>
                        
                               <v-col 
                                 cols="12"
-                                md="4"
+                                md="3"
                               >
                                 <v-checkbox
                                     v-model="checkbox"
+                                    hide-details
                                     label="En trámite"
                                     class="shrink mr-2 mt-0"
                                   ></v-checkbox>
@@ -397,11 +409,12 @@
 
                               <v-col 
                                 cols="12"
-                                md="4"
+                                md="3"
                               >
                                   <v-checkbox
                                     v-model="checkbox"
                                     label="No"
+                                    hide-details
                                     class="shrink mr-2 mt-0"
                                   ></v-checkbox>
                               </v-col>
@@ -430,7 +443,7 @@
                 </v-col>
                 <v-col
                   cols="12"
-                  md="3"
+                  md="2"
                 >
                   <v-text-field
                     color="purple"
@@ -440,7 +453,7 @@
                 </v-col>
                 <v-col
                   cols="12"
-                  md="3"
+                  md="2"
                 >
                   <v-text-field
                     color="purple"
@@ -470,7 +483,7 @@
                 </v-col>
                 <v-col
                   cols="12"
-                  md="3"
+                  md="4"
                 >
                   <v-text-field
                     color="purple"
@@ -520,7 +533,7 @@
                 </v-col>
                 <v-col
                   cols="12"
-                  md="3"
+                  md="4"
                 >
                   <v-text-field
                     color="purple"
@@ -530,7 +543,7 @@
                 </v-col>
                 <v-col
                   cols="12"
-                  md="3"
+                  md="4"
                 >
                   <v-text-field
                     color="purple"
