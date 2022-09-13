@@ -10,50 +10,37 @@
   >
     <div class="px-2">
       <default-drawer-header />
-
       <v-divider class="mx-3 mb-2" />
-
       <default-list :items="items" />
     </div>
-
     <template #append>
       <div class="pa-4 text-center">
-        <app-btn
-          class="text-none mb-4"
-          color="black"
-          href="https://vuetifyjs.com"
-          small
-          text
+        <vs-button
+        href="/"
+        danger
         >
-          Documentation
-        </app-btn>
-
-        <app-btn
-          block
-          class="text-none"
-          color="secondary"
-          href="https://store.vuetifyjs.com/products/vuetify-material-dashboard-pro"
-        >
-          <v-icon left>
-            mdi-package-up
-          </v-icon>
-
-          Upgrade to Pro
-        </app-btn>
+        <v-icon
+          color="white"
+          >mdi-logout-variant</v-icon>
+        <template #animate>
+         Salir
+        </template>
+      </vs-button>
       </div>
     </template>
-
     <div class="pt-12" />
   </v-navigation-drawer>
 </template>
-
 <script>
-  // Utilities
+  import Vue from 'vue'
+  import Vuesax from 'vuesax'
+  import 'vuesax/dist/vuesax.css'
   import { get, sync } from 'vuex-pathify'
-
+  Vue.use(Vuesax, {
+    // options here
+  })
   export default {
     name: 'DefaultDrawer',
-
     components: {
       DefaultDrawerHeader: () => import(
         /* webpackChunkName: "default-drawer-header" */
@@ -64,7 +51,6 @@
         './List'
       ),
     },
-
     computed: {
       ...get('user', [
         'dark',

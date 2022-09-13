@@ -4,7 +4,7 @@
     app
     absolute
     class="v-bar--underline"
-    color="transparent"
+    color="white"
     :clipped-left="$vuetify.rtl"
     :clipped-right="!$vuetify.rtl"
     height="70"
@@ -14,7 +14,6 @@
       class="hidden-md-and-up"
       @click="drawer = !drawer"
     />
-
     <default-drawer-toggle class="hidden-sm-and-down" />
 
     <v-toolbar-title
