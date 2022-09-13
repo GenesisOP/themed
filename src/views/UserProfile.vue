@@ -280,7 +280,10 @@
                 >
                   <v-text-field
                     color="purple"
+<<<<<<< HEAD
                     hide-details
+=======
+>>>>>>> ef49abf8d926a0e1cb3c7b259d1248bac6fe5f17
                     label="Apellido materno"
                     filled
                   />
@@ -318,6 +321,109 @@
                     filled
                   />
                 </v-col>
+<<<<<<< HEAD
+=======
+               <!--  <v-col
+                  cols="12"
+                  md="6"
+                >
+                <p class="text-left">{{ radios || '¿Cuenta con Constancia de Situación Fiscal actualizada?' }}</p>
+                
+                <v-radio-group
+                    v-model="row"
+                    row
+                  >
+                    <v-radio
+                      label="Si"
+                    
+                      @click="expand = !expand"
+             
+    
+                      
+                    ></v-radio>
+
+                    <v-radio
+                      label="No"
+                      @click="isdeleted"
+                    ></v-radio>
+
+                    <v-radio
+                      label="En trámite"
+              
+                    ></v-radio>
+                  </v-radio-group>
+                </v-col>
+
+                <v-col 
+                 
+                  cols="12"
+                  md="6"
+                >
+
+                <v-file-input 
+                v-show="expand"
+                    label="Subir Constancia de Situación Fiscal actualizada (PDF)"
+                    outlined
+                    dense
+                  ></v-file-input>
+                </v-col> -->
+                
+              
+                <v-card-text>
+                  <p class="text-CENTER">{{ radios || '¿Cuenta con Constancia de Situación Fiscal actualizada?' }}</p>
+                        <v-row >
+                          <v-col 
+                          cols="12"
+                          md="1"
+                        >
+                            <v-checkbox
+                                label="Si"
+                                  v-model="enabled"
+                                  class="shrink mr-2 mt-0"
+                                  
+                              ></v-checkbox>
+                            </v-col>
+                            <v-col 
+                          cols="12"
+                          md="4"
+                        >
+                          <v-file-input
+                              :disabled="!enabled"
+                              label="Subir documento PDF"
+                              outlined
+                              filled  
+                              dense
+                              
+                    ></v-file-input>
+                            </v-col>
+                       
+                              <v-col 
+                                cols="12"
+                                md="3"
+                              >
+                                <v-checkbox
+                                    v-model="checkbox"
+                                    hide-details
+                                    label="En trámite"
+                                    class="shrink mr-2 mt-0"
+                                  ></v-checkbox>
+                              </v-col>
+
+                              <v-col 
+                                cols="12"
+                                md="3"
+                              >
+                                  <v-checkbox
+                                    v-model="checkbox"
+                                    label="No"
+                                    hide-details
+                                    class="shrink mr-2 mt-0"
+                                  ></v-checkbox>
+                              </v-col>
+                        </v-row>
+                        
+                </v-card-text>
+>>>>>>> ef49abf8d926a0e1cb3c7b259d1248bac6fe5f17
                 <v-col
                   cols="12"
                   md="3"
