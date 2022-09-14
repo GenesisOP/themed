@@ -8,6 +8,21 @@
     app
     width="260"
   >
+  <v-list-item class="mb-0 justify-space-between pl-3">
+    <v-list-item-avatar>
+      <v-img
+        :src="
+          require('@/assets/MARKy.png')"
+      />
+    </v-list-item-avatar>
+
+    <v-list-item-content class="pl-2">
+      <v-list-item-title class="text-h3">
+        <strong class="mr-1 font-weight-black">MARKY</strong>
+        <span class="primary--text">APP</span>
+      </v-list-item-title>
+    </v-list-item-content>
+  </v-list-item>
     <div class="px-2">
       <default-drawer-header />
       <v-divider class="mx-3 mb-2" />
@@ -42,10 +57,6 @@
   export default {
     name: 'DefaultDrawer',
     components: {
-      DefaultDrawerHeader: () => import(
-        /* webpackChunkName: "default-drawer-header" */
-        './widgets/DrawerHeader'
-      ),
       DefaultList: () => import(
         /* webpackChunkName: "default-list" */
         './List'

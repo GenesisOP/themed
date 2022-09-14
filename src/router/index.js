@@ -24,6 +24,7 @@ const router = new Router({
 
       // Pages
       route('UserProfile', null, 'components/profile'),
+      route('Panel', null, '/panel'),
       route('Register', null, 'components/register'),
       route('Dashboard', null, 'components/inicio'),
       route('CreateUser', null, 'components/newuser'),
